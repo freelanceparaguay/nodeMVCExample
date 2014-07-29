@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= (locals.title) ? title : 'Welcome Home' %></title>
+
+    <!-- Core CSS - Include with every page -->
+ 
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="./css/back.css" rel="stylesheet">
+
+ 
+    <script src="./js/jquery-1.10.2.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        
+        <div id="page-wrapper">
+
+<!-- INICIO CUERPO DEL HTML CLIENTE-->
+   
+         <div class="row">
+      <div class="col-md-11">
+         <div style="border:1px solid #ddd;min-height:60px;padding:12px">                      
+           <div class="col-md-11">
+              <!-- BEGIN SEARCH FORM -->
+              <form class="form-inline" role="form"> 
+                  <div class="form-group"> Filter By : 
+                    <select id="sort-by" class="form-control">
+                        <option value="">-</option>
+                        <option value="id" >id</option>
+                        <option value="groupName" >perfil</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                     <input type="text" id="search-field" class="form-control" placeholder="Search..." value="buscar">
+                  </div>                     
+                  <a id="go-search" class="btn btn-default btn-warning"><i class="fa fa-search"></i></a>                      
+                   <div class="form-group pull-right">
+                       <a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#modal-window"><i class="fa fa-plus"></i>Add</a>
+                   </div>
+               </form>
+               <!-- END SEARCH FORM -->
+           </div>
+         </div>
+     </div>
+    </div><!-- /.row -->       
+       <div class="row">
+            <div class="col-xs-11 col-sm-6 col-md-11">               
+                <div class="table-responsive" style="margin-top:5px">
+                        <table id="headTable" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Id</th>
+                                <th>Grupo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr onclick="headerTable(1)">
+                                 <td>1</td>
+                                 <td>1</td>
+                                 <td>administrador</td>
+                             </tr>
+                             <tr onclick="headerTable(2)">
+                                 <td>2</td>
+                                 <td>2</td>
+                                 <td>ungrupo</td>
+                             </tr>
+                        </tbody>
+                        </table>    
+
+                    <!--<iframe src="http://127.0.0.1:3720/groupsmodules/detail?idQuery=1" width="100%" height="100%" id="detailsMarco" frameborder="0"></iframe>
+                -->
+                    <button onclick="detailsJ(2)">BUTTON</button>
+                    <div>
+                    <iframe src="http://127.0.0.1:3720/groupsmodules/detail?idQuery=1" id="detailsMarco" width="100%" frameborder="0">
+                    </iframe>
+                    </div>
+                </div>
+                <%- pagination %>
+            </div>
+        </div>      
+         
+    </div> <!--end of page container-->
+ <!-- --------------------------------------------------------------- -->
+ </div>   <!-- /#page-wrapper -->
+    </div> <!-- /#wrapper -->
+    <!-- Core Scripts - Include with every page -->
+    <!-- por cada modulo agrega las funciones para validacion del cliente-->
+    <script src="./js/multiple_clientScripts.js"></script>  
+<!-- --------------------------------------------------------------- -->  
+<!-- FIN CUERPO DEL HTML CLIENTE-->
+
+
+<!-- footer --> 
+    <script src="../js/bootstrap.js"></script>
+</body>
+</html>
